@@ -154,7 +154,7 @@ function importCookies(files) {
     message.style.display='block';
     isParsing(true);
     for (var i = 0, f; f = files[i]; i++) {
-        if (f.size > 1024 * 500) {
+        if (f.size > 1024 * 1024) { // if file size is lager than 1MByte
             var cookie_file = new CookieFile(f.name);
             cookie_file.addCookie({'name':i18n('error')+': '+i18n('errorFilesize'), 'domain':''}, true);
             message.appendChild(cookie_file.div);
